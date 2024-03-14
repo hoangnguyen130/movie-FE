@@ -2,11 +2,13 @@
 
 
 :root{
-
+    --background-color: rgb(20, 20, 20);
 }
 
 *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html{

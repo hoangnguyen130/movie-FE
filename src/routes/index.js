@@ -1,8 +1,9 @@
 import Home from "~/pages/Home"
-
+import Movie from "~/pages/Movie"
 
 const publicRoutes = [
-    { path: '/', component: Home }
+    { path: '/', component: Home },
+    { path: '/movie', component: Movie }
 ]
 
 

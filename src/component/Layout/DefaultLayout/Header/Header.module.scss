@@ -1,0 +1,23 @@
+.wrapper{
+    height: 68px;
+    display: flex;
+    background-color: var(--background-color);
+}
+
+.content{
+    height: 100%;
+    justify-content: center;
+    color: white;
+    position: relative;
+}
+.logo{
+    display: inline-block;
+}
+.header-list{
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+}
+.search-wrapper{
+    display: none;
+}
