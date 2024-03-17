@@ -3,6 +3,8 @@
 
 :root{
     --background-color: rgb(20, 20, 20);
+    --white: white;
+    --black: black;
 }
 
 *{
@@ -20,4 +22,12 @@ body{
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
+}
+button, input, [tabindex] {
+    outline: none;
+    border: none;
+}
+a[href]{
+    color: var(--white);
+    text-decoration: none;
 }
