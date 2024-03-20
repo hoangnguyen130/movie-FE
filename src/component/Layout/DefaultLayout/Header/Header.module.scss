@@ -14,10 +14,10 @@
 .logo{
     height: 100%;
     padding-right: 20px;
+    cursor: pointer;
 }
 .logo > img{
     height: 100%;
-    border-radius: 30px;
 }
 .header-list{
     width: 100%;
@@ -84,4 +84,27 @@
     border: 1px solid hsl(0,0%,18.82%);
     border-radius: 16px;
 
+}
+.login{
+    padding-left: 20px;
+    background-color: transparent;
+}
+.login-btn{
+    width: 96px;
+    font-size: 16px;
+    background-color: transparent;
+    color: #3ea6ff;
+    padding: 8px 20px;
+    border: 1px solid hsl(0,0%,18.82%);
+    border-radius: 16px;
+    &:hover{
+        cursor: pointer;
+        background-color: rgba(62, 166, 255, 0.3);
+    }
+}
+.user-avt{
+    border-radius: 20px;
+    height: 50%;
+    margin-left: 12px;
+    cursor: pointer;
 }

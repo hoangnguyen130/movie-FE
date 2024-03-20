@@ -1,5 +1,5 @@
 import Header from "./Header";
-import Sidebar from "./Sidebar";
+import Sidebar from "./Trailer";
 import styles from "./DefaultLayout.module.scss"
 import classNames from "classnames/bind";
 

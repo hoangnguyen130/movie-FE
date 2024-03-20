@@ -6,9 +6,13 @@ import { faCircleXmark, faMagnifyingGlass } from '@fortawesome/free-solid-svg-ic
 
 import styles from './Header.module.scss'
 import { Wrapper as PopperWrapper } from '../../Popper';
-import {default as MovieName} from '~/component/SearchRecommend';
+import { SearchRecommend as MovieName } from '~/component/SearchRecommend';
+import Menu from '../../Popper/Menu';
+import logo from '~/assets/img/logo-rvbg.png'
 
 const cx = classNames.bind(styles)
+const currentUser = true 
+
 
 function Header() {
     const [searchResult, setSearchResult] = useState([])
@@ -23,7 +27,7 @@ function Header() {
         <div className={cx('content')}>
             <div className={cx('logo')}>
             <img
-            src='https://voodooneon.com/cdn/shop/files/cinema-red.jpg?v=1699936405&width=1946'
+            src={logo}
             alt="logo movie"/>
             </div>
             <div className={cx('header-list')} >
@@ -55,6 +59,20 @@ function Header() {
                     </button>
                 </div>
             </Tippy>
+            
+            {currentUser ? (
+                <Menu>
+                    <img 
+                    className={cx('user-avt')}
+                    src='https://avatars.githubusercontent.com/u/91184625?v=4'
+                    alt='user avatar'/>
+                </Menu>
+            ) : (
+
+            <div className={cx('login')}>
+                <button className={cx('login-btn')}>Sign in</button>
+            </div>
+            )}
         </div>
     </header>
 }
