@@ -1,7 +1,8 @@
 import Header from "./Header";
-import Sidebar from "./Trailer";
+import Trailer from "./Trailer";
 import styles from "./DefaultLayout.module.scss"
 import classNames from "classnames/bind";
+import Content from "./Content";
 
 const cx = classNames.bind(styles);
 function DefaultLayout({ children }) {
@@ -9,7 +10,8 @@ function DefaultLayout({ children }) {
         <div className={cx('wrapper')}>
             <Header/>
             <div className={cx('container')}>
-                <Sidebar/>
+                <Trailer/>
+                <Content/>
                 <div className={cx("content")}>
                     {children}
                 </div>

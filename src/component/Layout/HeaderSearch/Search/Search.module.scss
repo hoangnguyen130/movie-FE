@@ -25,9 +25,7 @@
     color: rgb(128, 128, 128);
     background-color: transparent;
     padding-right: 4px;
-    &:hover{
-        cursor: pointer;
-    }
+    cursor: pointer;
 }
 .search-btn{
     height: 33px;
@@ -37,10 +35,7 @@
     border-bottom-right-radius: 30px;
     font-size: 16px;
     padding:0 16px 0 12px;
-    
-    &:hover{
     cursor: pointer;
-    }
 }
 .recommend-box{
     width: 365px;

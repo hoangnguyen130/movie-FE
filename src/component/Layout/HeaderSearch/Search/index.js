@@ -19,7 +19,7 @@ function Search() {
 
     useEffect(() => {
         setTimeout(() => {
-            setSearchResult([1, 2 ,3]);
+            setSearchResult([]);
         }, 0);
     }, [])
     const handleClear = () => {
