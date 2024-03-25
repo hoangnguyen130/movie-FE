@@ -1,0 +1,117 @@
+.wrapper-content{
+    background-color: var(--background-color);
+    color:#e5e5e5;
+    padding:0 60px;
+    overflow: hidden;
+}
+.list-title{
+    display: flex;
+    cursor: pointer;
+}
+.text-title{
+    font-size: 20px;
+    padding: 4px 0;
+}
+.see-all{
+    height: 100%;
+    font-size: 12px;
+    color: #54b9c5;
+    padding: 12px;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: all 0.5s;
+
+}
+.wrapper-content:hover .see-all{
+    opacity: 1;
+    transform: translateX(0%);
+
+}
+.title-icon{
+    padding-left: 4px;
+}
+.list-movie{
+    display: inline-flex;
+    overflow: hidden;
+
+}
+.single-movie{
+    height: 200px;
+    width: 320px;
+    margin-right: 12px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.movie-img{
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+.movie-img > img{
+    height: 100%;
+    width: 100%;
+}
+.overlay{
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom, #fbbd61, #ec7532);
+    transform: skewX(30deg) translateX(-150%);
+    transition: all 0.5s;
+    opacity: 0.9;
+    z-index: 0;
+}
+.single-movie:hover .overlay{
+    transform: skewX(30deg) translateX(-30%);
+    z-index: 0;
+}
+.single-movie-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    z-index: 10;
+    text-align: center;
+    opacity: 0;
+}
+.single-movie:hover .single-movie-content{
+    opacity: 1;
+}
+.play{
+    width: 60px;
+    height: 60px;
+    color: var(--white);
+    background-color: transparent;
+    border: 2px solid var(--white);
+    border-radius: 40px;
+    cursor: pointer;
+    transition: .5s;
+    &:hover{
+        transform: scale(0.9);
+    }
+}
+.more-info{
+    background-color: transparent;
+    color: var(--white);
+    cursor: pointer;
+    &:hover{
+        opacity: 0.8;
+    }
+}
+.play-icon{
+    font-size: 20px;
+}
+.rate{
+    display: flex;
+    text-align: left;
+    padding: 0 12px;
+}

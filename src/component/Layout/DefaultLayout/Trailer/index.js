@@ -8,7 +8,7 @@ import { faInfo, faPlay } from "@fortawesome/free-solid-svg-icons";
 function Trailer() {
     
     const cx = classNames.bind(styles);
-        return <body className={cx('trailer-wrapper')}>
+        return <section className={cx('trailer-wrapper')}>
             <img
                 className={cx('background-img')}
                 src="https://th.bing.com/th/id/R.c316d0c26208023aef3ffa0e9d233387?rik=2zXfqg8t6OduOg&pid=ImgRaw&r=0"
@@ -24,15 +24,15 @@ function Trailer() {
                 <div className={cx('button')}>
                     <button className={cx('play')}>
                         <FontAwesomeIcon className={cx('play-icon')} icon={faPlay}/>
-                        <h5 className={cx('play-text')}>Play</h5>
+                        <span className={cx('play-text')}>Play</span>
                     </button>
                     <button className={cx('more-info')}>
                         <FontAwesomeIcon className={cx('more-icon')} icon={faInfo}/>
-                        <h5 className={cx('more-text')}>More info</h5>
+                        <span className={cx('more-text')}>More information</span>
                     </button>
                 </div>
             </div>
-        </body>
+        </section>
     }
 
 export default Trailer;

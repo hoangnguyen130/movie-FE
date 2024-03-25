@@ -2,7 +2,8 @@ import Header from "./Header";
 import Trailer from "./Trailer";
 import styles from "./DefaultLayout.module.scss"
 import classNames from "classnames/bind";
-import Content from "./Content";
+import Content from "./Slider";
+import Footer from "./Footer";
 
 const cx = classNames.bind(styles);
 function DefaultLayout({ children }) {
@@ -16,6 +17,7 @@ function DefaultLayout({ children }) {
                     {children}
                 </div>
             </div>
+            <Footer/>
         </div>
      );
 }

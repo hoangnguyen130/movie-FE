@@ -1,5 +1,9 @@
+import Slider from "~/component/Layout/DefaultLayout/Slider";
+
+// import Footer from "~/component/Layout/DefaultLayout/Footer";
+
 function Home() {
-    return  <h2>Home Page</h2>;
+    return  <Slider/>
 }
 
 export default Home;

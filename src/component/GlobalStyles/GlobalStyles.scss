@@ -29,6 +29,9 @@ button, input, [tabindex] {
     outline: none;
     border: none;
 }
+ul, li{
+    list-style: none;
+}
 a[href]{
     color: var(--white);
     text-decoration: none;

@@ -1,14 +1,14 @@
 import classNames from "classnames/bind";
-import styles from './Content.module.scss';
+import styles from './Slider.module.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
-
+import { default as MovieReview } from './Review'
 
 const cx = classNames.bind(styles)
 
-function Content() {
-    return <body className={cx('wrapper-content')}>
+function Slider() {
+    return <section className={cx('wrapper-content')}>
         <div className={cx('list-title')}>
             <h2 className={cx('text-title')}>List title</h2>
             <p className={cx('see-all')}>See all
@@ -17,13 +17,16 @@ function Content() {
 
         </div>
         <div className={cx('list-movie')}>
-            <img
-                className={cx('movie-img')}
-                src="https://th.bing.com/th/id/R.c316d0c26208023aef3ffa0e9d233387?rik=2zXfqg8t6OduOg&pid=ImgRaw&r=0"
-                alt="movie-img"
-            />
+            <MovieReview/>
+            <MovieReview/>
+            <MovieReview/>
+            <MovieReview/>
+            <MovieReview/>
+            <MovieReview/>
+            <MovieReview/>
+            <MovieReview/>
         </div>
-    </body>
+    </section>
 }
 
-export default Content;
+export default Slider;
