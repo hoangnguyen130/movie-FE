@@ -2,6 +2,10 @@
     height: 68px;
     display: flex;
     background-color: var(--background-color);
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
 }
 
 .content{
@@ -26,12 +30,12 @@
     color: var(--white);
     font-size: 16px;
     list-style: none;
-    cursor: pointer;
     display: flex;
     align-items: center;
 }
 .header-list > ul > li{
     padding: 12px;
+    cursor: pointer;
 }
 
 .login{
