@@ -32,7 +32,7 @@
 }
 .list-movie{
     display: inline-flex;
-    overflow: hidden;
+    // overflow: hidden;
 
 }
 .single-movie{
@@ -79,7 +79,7 @@
     position: absolute;
     top: 30%;
     left: 30%;
-    z-index: 10;
+    z-index: 1;
     text-align: center;
     opacity: 0;
 }

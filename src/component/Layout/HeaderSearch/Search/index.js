@@ -7,6 +7,7 @@ import { faCircleXmark, faMagnifyingGlass } from '@fortawesome/free-solid-svg-ic
 import { Wrapper as PopperWrapper } from '../../Popper';
 import { SearchRecommend as MovieName } from '../SearchRecommend';
 import styles from './Search.module.scss';
+import { useDebounce } from '~/hooks';
 
 const cx = classNames.bind(styles);
 
@@ -15,13 +16,21 @@ function Search() {
     const [searchResult, setSearchResult] = useState([]);
     const [showResult, setShowResult] = useState(true);
 
+    const debounced = useDebounce(searchValue, 1000);
+
     const inputRef = useRef();
 
     useEffect(() => {
-        setTimeout(() => {
-            setSearchResult([]);
-        }, 0);
-    }, [])
+        if ( !debounced.trim()){
+            return;
+        }
+        fetch(`https://api.themoviedb.org/3/search/movie?api_key=b4880373e5e7462cf3059ff7f7188e5d&query=${searchValue}`)
+            .then((res) => res.json())
+            .then((res) => {
+                setSearchResult(res.results);
+            });
+        // eslint-disable-next-line    
+        }, [debounced])
     const handleClear = () => {
         setSearchValue('');
         setSearchResult([]);
@@ -36,9 +45,11 @@ function Search() {
                 visible={showResult && searchResult.length > 0}
                 render = {attrs => (
                     <div className={cx('recommend-box')} tabIndex='-1' {...attrs}>
-                        <PopperWrapper><MovieName/></PopperWrapper>
-                        <PopperWrapper><MovieName/></PopperWrapper>
-                        <PopperWrapper><MovieName/></PopperWrapper>                       
+                        {searchResult.map((result) => (
+                            <PopperWrapper>
+                                <MovieName key={result.id} data={result}/>  
+                            </PopperWrapper>                     
+                        ))}
                     </div>
                 )}
                 onClickOutside={handleHideResult}

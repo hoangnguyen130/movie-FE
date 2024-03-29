@@ -1,13 +1,12 @@
 import classNames from "classnames/bind";
+import styles from './SearchRecommend.module.scss'
 
+const cx = classNames.bind(styles);
 
-const cx = classNames.bind();
-
-function SeachRecommend({children}) {
+function SeachRecommend({data}) {
     return ( 
-        // {children.title}
         <p className={cx('movie-name')}>
-            Movie name
+            {data.title}
         </p>
      );
 };
