@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import axios from 'axios';
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react/headless';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -16,7 +17,7 @@ function Search() {
     const [searchResult, setSearchResult] = useState([]);
     const [showResult, setShowResult] = useState(true);
 
-    const debounced = useDebounce(searchValue, 1000);
+    const debounced = useDebounce(searchValue, 700);
 
     const inputRef = useRef();
 
@@ -24,10 +25,16 @@ function Search() {
         if ( !debounced.trim()){
             return;
         }
-        fetch(`https://api.themoviedb.org/3/search/movie?api_key=b4880373e5e7462cf3059ff7f7188e5d&query=${searchValue}`)
-            .then((res) => res.json())
+        axios
+            .get(`https://api.themoviedb.org/3/search/movie`,
+            {
+                params: {
+                    api_key: 'b4880373e5e7462cf3059ff7f7188e5d',
+                    query: debounced
+                }
+            })
             .then((res) => {
-                setSearchResult(res.results);
+                setSearchResult(res.data.results);
             });
         // eslint-disable-next-line    
         }, [debounced])
