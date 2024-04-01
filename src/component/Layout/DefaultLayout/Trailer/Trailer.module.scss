@@ -16,14 +16,14 @@
 .movie-title{
     font-size: 60px;
     text-align: left ;
-    color: red;
+    color: var(--black);
     margin-bottom: 20px;
 }
 .movie-describe{
     font-size: 20px;
     font-weight: 200;
     text-align: left;
-    color: var(--white);
+    color: var(--black);
     padding: 20px 0;
 }
 .button{

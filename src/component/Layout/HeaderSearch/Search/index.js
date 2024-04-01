@@ -9,6 +9,7 @@ import { Wrapper as PopperWrapper } from '../../Popper';
 import { SearchRecommend as MovieName } from '../SearchRecommend';
 import styles from './Search.module.scss';
 import { useDebounce } from '~/hooks';
+import { api_key } from '~/apiConfiguration/api';
 
 const cx = classNames.bind(styles);
 
@@ -29,7 +30,7 @@ function Search() {
             .get(`https://api.themoviedb.org/3/search/movie`,
             {
                 params: {
-                    api_key: 'b4880373e5e7462cf3059ff7f7188e5d',
+                    api_key: api_key,
                     query: debounced
                 }
             })
