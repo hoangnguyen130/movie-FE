@@ -8,13 +8,13 @@ import { baseImageUrl } from "~/apiConfiguration/api";
 const cx = classNames.bind(styles)
 
 function Review({data}) {
-    const imgSrc = `${baseImageUrl}${data.poster_path}`
+    const imgSrc = `${baseImageUrl}${data.poster_url}`
     return ( 
         <div className={cx('single-movie')}>
                 <div className={cx('movie-img')}>
                     <img
                         src= {imgSrc}
-                        alt= {data.title}
+                        alt= {data.name}
                     />
                 </div>
                 <div className={cx('overlay')}></div>
@@ -25,7 +25,7 @@ function Review({data}) {
                     <a href="/movie" className={cx('more-info')}>
                         More information
                     </a>
-                    <span className={cx('rate')}>Rate:{data.vote_average}</span>
+                    {/* <span className={cx('rate')}>Rate:{data.vote_average}</span> */}
                 </div>
             </div>
     );

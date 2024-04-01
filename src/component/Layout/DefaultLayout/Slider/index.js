@@ -5,23 +5,26 @@ import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 import { default as MovieReview } from './Review'
 import axios from "axios";
-import { useState } from "react";
-import { api_key } from "~/apiConfiguration/api";
+import { useEffect, useState } from "react";
 
 const cx = classNames.bind(styles)
 
 function Slider() {
     const [trendingMovie, setTrendingMovie] = useState([]);
-    axios
-        .get(`https://api.themoviedb.org/3/trending/movie/week`,
-        {
-            params: {
-                api_key: api_key,
-            }
-        })
-        .then((res) => {
-            setTrendingMovie(res.data.results);
-        })
+
+    useEffect(() => {
+        axios
+            .get(`https://ophim1.com/danh-sach/phim-moi-cap-nhat`,
+            {
+                params: {
+                    page: 1
+                }
+            })
+            .then((res) => {
+                setTrendingMovie(res.data.items);
+            })
+
+    }, [])
     return <section className={cx('wrapper-content')}>
         <div className={cx('list-title')}>
             <h2 className={cx('text-title')}>Trending</h2>
@@ -30,8 +33,8 @@ function Slider() {
             </p>
         </div>
         <div className={cx('list-movie')}>
-            {trendingMovie.map((result) => (
-                <MovieReview key={result.id} data={result}/>
+            {trendingMovie.map((item) => (
+                <MovieReview key={item._id} data={item}/>
             ))}
         </div>
     </section>

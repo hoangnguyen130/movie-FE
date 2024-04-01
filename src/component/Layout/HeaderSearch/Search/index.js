@@ -9,7 +9,6 @@ import { Wrapper as PopperWrapper } from '../../Popper';
 import { SearchRecommend as MovieName } from '../SearchRecommend';
 import styles from './Search.module.scss';
 import { useDebounce } from '~/hooks';
-import { api_key } from '~/apiConfiguration/api';
 
 const cx = classNames.bind(styles);
 
@@ -27,15 +26,14 @@ function Search() {
             return;
         }
         axios
-            .get(`https://api.themoviedb.org/3/search/movie`,
+            .get(`https://ophim1.com/phim/`,
             {
                 params: {
-                    api_key: api_key,
-                    query: debounced
+                    '' : debounced
                 }
             })
             .then((res) => {
-                setSearchResult(res.data.results);
+                setSearchResult(res.data.items);
             });
         // eslint-disable-next-line    
         }, [debounced])
@@ -53,9 +51,9 @@ function Search() {
                 visible={showResult && searchResult.length > 0}
                 render = {attrs => (
                     <div className={cx('recommend-box')} tabIndex='-1' {...attrs}>
-                        {searchResult.map((result) => (
+                        {searchResult.map((item) => (
                             <PopperWrapper>
-                                <MovieName key={result.id} data={result}/>  
+                                <MovieName key={item._id} data={item}/>  
                             </PopperWrapper>                     
                         ))}
                     </div>
