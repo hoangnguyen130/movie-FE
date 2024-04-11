@@ -9,6 +9,7 @@ const cx = classNames.bind(styles)
 
 function Review({data}) {
     const imgSrc = `${baseImageUrl}${data.poster_url}`
+    console.log(imgSrc)
     return ( 
         <div className={cx('single-movie')}>
                 <div className={cx('movie-img')}>

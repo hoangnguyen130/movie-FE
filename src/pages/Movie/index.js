@@ -1,5 +1,7 @@
+import PlayMovie from "~/component/Layout/DefaultLayout/PlayMovie";
+
 function Movie() {
-    return <h2> Movie Page</h2>;
+    return <PlayMovie/>
 }
 
 export default Movie;

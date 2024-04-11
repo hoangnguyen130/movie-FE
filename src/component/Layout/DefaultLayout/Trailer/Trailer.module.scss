@@ -2,17 +2,16 @@
     background-color: var(--background-color);
 }
 .background-img{
-    height: 50%;
     width: 100%;
     position: relative;
 }
 .movie-info{
     position: absolute;
-    height: 500px;
+    height: 300px;
     width: 550px;
-    top: 200px;
+    bottom: 150px;
     left: 60px;
-    background-color: rgba(109, 109, 110, 0.2);
+    // background-color: rgba(109, 109, 110, 0.2);
 }
 .movie-title{
     font-size: 60px;

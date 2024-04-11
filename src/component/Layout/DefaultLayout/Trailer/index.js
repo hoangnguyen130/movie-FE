@@ -1,9 +1,9 @@
+/* eslint-disable no-unused-vars */
 import classNames from "classnames/bind";
 import styles from './Trailer.module.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInfo, faPlay } from "@fortawesome/free-solid-svg-icons";
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
-import { baseImageUrl } from "~/apiConfiguration/api";
 import { useEffect, useState } from "react";
 
 
@@ -14,39 +14,46 @@ function Trailer() {
 
     useEffect(() => {
         axios
-            .get('https://ophim1.com/danh-sach/phim-moi-cap-nhat',
+            .get('https://ophim1.com/phim/nu-hoang-nuoc-mat',
             {
                 params: {
-                    page: 1
                 }
             })
             .then((res) => {
-                setTrailerMovie(res.data.items[0])
+                setTrailerMovie(res.data.movie)
             })
     }, [])
-    const imgSrc = `${baseImageUrl}${trailerMovie.poster_url}`
     return <section className={cx('trailer-wrapper')}>
         <img
             className={cx('background-img')}
-            src= {imgSrc}
+            src= {trailerMovie.poster_url}
             alt= {trailerMovie.name}
         />
+        {/* <iframe width="100%" height="740" 
+            src={trailerMovie.trailer_url} 
+            title="YouTube video player" 
+            frameborder="0"
+            controls = '0'
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+        </iframe> */}
         <div className={cx('movie-info')}>
             <div className={cx('movie-title')}>
                 <p>{trailerMovie.name}</p>
             </div>
             <h4 className={cx('movie-describe')}>
-                {trailerMovie.origin_name}
+                {trailerMovie.content}
             </h4>
             <div className={cx('button')}>
                 <button className={cx('play')}>
                     <FontAwesomeIcon className={cx('play-icon')} icon={faPlay}/>
                     <span className={cx('play-text')}>Play</span>
                 </button>
-                <button className={cx('more-info')}>
+                {/* <button className={cx('more-info')}>
                     <FontAwesomeIcon className={cx('more-icon')} icon={faInfo}/>
                     <span className={cx('more-text')}>More information</span>
-                </button>
+                </button> */}
             </div>
         </div>
     </section>
