@@ -1,0 +1,33 @@
+.model-wrapper{
+  background-color: var(--background-color);
+  color: var(--white);
+}
+
+.list-exp{
+  margin-top: 12px;
+}
+.text-list-exp{
+  margin-left: 12px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #54b9c5;
+}
+.pagination{
+  width: 100%;
+  display: flex;
+  margin-top: 4px
+}
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  background-color: var(--background-color);
+  transition: background-color .3s;
+}
+  
+  .pagination a.active {
+    background-color: dodgerblue;
+    color: white;
+  }
+  
+  .pagination a:hover:not(.active) {background-color: #ddd;}

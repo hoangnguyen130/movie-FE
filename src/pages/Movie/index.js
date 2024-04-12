@@ -1,7 +1,7 @@
-import PlayMovie from "~/component/Layout/DefaultLayout/PlayMovie";
+import ModelMovie from "~/component/Layout/DefaultLayout/ModelMovie";
 
 function Movie() {
-    return <PlayMovie/>
+    return <ModelMovie/>
 }
 
 export default Movie;
