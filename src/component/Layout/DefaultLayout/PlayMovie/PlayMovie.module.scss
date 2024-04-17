@@ -1,0 +1,15 @@
+.full-screen{
+    font-size: 20px;
+    background-color: transparent;
+    color: var(--white);
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+.video{
+    // padding: 24px;
+    height: 600px;
+    width: 1050px;
+    position: relative;
+}

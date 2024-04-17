@@ -3,7 +3,7 @@ import styles from './Slider.module.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
-import { default as MovieReview } from './Review'
+import { Review } from './Review'
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -34,7 +34,7 @@ function Slider() {
         </div>
         <div className={cx('list-movie')}>
             {trendingMovie.map((item) => (
-                <MovieReview key={item._id} data={item}/>
+                <Review key={item._id} data={item}/>
             ))}
         </div>
     </section>

@@ -1,18 +1,18 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import classNames from "classnames/bind";
 import styles from './ModelMovie.module.scss'
 
 const cx = classNames.bind(styles)
 
 
-function Pagination(data) {
-    console.log(data.data.server_data)
+function Ep(data) {
     return ( 
-        <div className={cx("pagination")}>
+        <div className={cx("ep")}>
             {data.data.server_data.map((e, i) => (
-                <a key={i} href="#">{i + 1}</a>
+                <button className={cx('ep-button')} key={i}>{i + 1}</button>
             ))}
         </div>
      );
 }
 
-export default Pagination;
+export default Ep;

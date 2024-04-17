@@ -4,6 +4,7 @@ import styles from './Header.module.scss'
 import Menu from '../../Popper/Menu';
 import logo from '~/assets/img/logo-rvbg.png'
 import Search from '../../HeaderSearch/Search';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles)
 const currentUser = true 
@@ -21,10 +22,10 @@ function Header() {
             </div>
             <div className={cx('header-list')} >
                 <ul>
-                    <li className=''>Home</li>
-                    <li className=''>Cartoon</li>
-                    <li className=''>Movie</li>
-                    <li className=''>Most Popular</li>
+                    <li><Link to='/'>Home</Link></li>
+                    <li>Cartoon</li>
+                    <li>Movie</li>
+                    <li>Most Popular</li>
                 </ul>
             </div>
             
