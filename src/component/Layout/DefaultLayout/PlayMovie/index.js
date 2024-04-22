@@ -7,16 +7,11 @@ const cx = classNames.bind(styles);
 
 
 function PlayMovie({data, index}) {
-    console.log(data)
-    // return <section>
-    //         <div classNames={cx('play-movie')}>
-    //             {
-    //                 data.data.server_data.map((item) => (
-    //                     <Video key={index} data={item} index={index}/>
-    //                 ))
-    //             }
-    //         </div>
-    // </section>
+    return <section>
+            <div classNames={cx('play-movie')}>
+                <Video key={index} data={data} index={index}/>
+            </div>
+    </section>
     
 }
 export default PlayMovie;

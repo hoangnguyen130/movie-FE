@@ -7,11 +7,13 @@ const cx = classNames.bind(styles)
 
 function Ep(data) {
     return ( 
-        <div className={cx("ep")}>
-            {data.data.server_data.map((e, i) => (
-                <button className={cx('ep-button')} key={i}>{i + 1}</button>
-            ))}
-        </div>
+        <ul className={cx("ep")}>
+            <li>
+                {data.data.server_data.map((e, i) => (
+                    <button className={cx('ep-button')} key={i}>{i + 1}</button>
+                ))}
+            </li>
+        </ul>
      );
 }
 
