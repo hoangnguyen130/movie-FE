@@ -1,13 +1,17 @@
 .wrapper{
     height: 68px;
     display: flex;
-    background-color: var(--background-color);
+    // background-color: transparent;
     position: fixed;
     top: 0;
     z-index: 10;
     width: 100%;
+    transition: .5s ease-in-out;
 }
-
+.background{
+    background-color: var(--background-color);
+    transition: 0.5s;
+}
 .content{
     width: 100%;
     display: flex;
@@ -17,8 +21,7 @@
 }
 .logo{
     height: 100%;
-    padding-right: 20px;
-    cursor: pointer;
+    padding-right: 40px;
 }
 .logo > img{
     height: 100%;
@@ -32,10 +35,29 @@
     list-style: none;
     display: flex;
     align-items: center;
+    text-shadow: var(--black) 0.1em 0.1em 0.2em;
+}
+.header-list > ul > li::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    background: linear-gradient(to right, #42a3f9, #3ea6ff);
+    display: block;
+    transition: .5s;
+}
+.header-list > ul > li:hover::after{
+    width: 100%;
+    padding: 0 1px;
+}
+.header-list .active::after{
+    width: 100%;
+    padding: 0 1px;
 }
 .header-list > ul > li{
     padding: 12px;
     cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: .5s;
 }
 
 .login{
@@ -46,7 +68,7 @@
     width: 96px;
     font-size: 16px;
     background-color: transparent;
-    color: #3ea6ff;
+    color: var(--main-color);
     padding: 8px 20px;
     border: 1px solid hsl(0,0%,18.82%);
     border-radius: 16px;

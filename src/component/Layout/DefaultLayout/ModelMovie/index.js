@@ -31,7 +31,6 @@ function ModelMovie() {
     const handleChangeEp = (event) =>{
         setEP(event.target.innerText - 1)
     }
-    console.log(name)
     return <section className={cx('model-wrapper')}>
             <Header/>
             <ul className={cx('movie-name')}>

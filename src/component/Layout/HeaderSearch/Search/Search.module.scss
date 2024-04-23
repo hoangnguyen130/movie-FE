@@ -14,11 +14,13 @@
     height: 24px;
     width: 300px;
     padding-left: 16px;
-    background-color: var(--background-color);
+    // background-color: var(--background-color);
+    background-color: transparent;
     border-radius: 30px;
     color: var(--white);
     text-align: inherit;
     font-size: 16px;
+    text-shadow: black 0.1em 0.1em 0.2em;
 }
 .clear{
     font-size: 12px;

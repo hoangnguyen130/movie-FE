@@ -5,15 +5,29 @@ import Menu from '../../Popper/Menu';
 import logo from '~/assets/img/logo-rvbg.png'
 import Search from '../../HeaderSearch/Search';
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 const cx = classNames.bind(styles)
 const currentUser = true 
 
 
 function Header() {
-  
-
-    return <header className={cx('wrapper')}>
+    const [showbg, setShowbg] = useState(false)
+    useEffect(() => {
+        const handlerScroll = () => {
+            if (window.scrollY >= 200) {
+                setShowbg(true)
+            } else setShowbg(false)
+        }
+        window.addEventListener('scroll', handlerScroll)
+        //Cleanup func
+        return () => {
+            window.removeEventListener('scroll', handlerScroll)
+        }
+    },[])
+    return <header className={cx(styles.wrapper, {
+                [styles.background]: showbg
+            })}>
         <div className={cx('content')}>
             <div className={cx('logo')}>
             <img
@@ -22,10 +36,18 @@ function Header() {
             </div>
             <div className={cx('header-list')} >
                 <ul>
-                    <li><Link to='/'>Home</Link></li>
-                    <li>Cartoon</li>
-                    <li>Movie</li>
-                    <li>Most Popular</li>
+                    <li className={cx('active')}>
+                        <Link to='/'>Trang chủ</Link>
+                    </li>
+                    <li>
+                        <Link to='/'>Phim lẻ</Link>
+                    </li>
+                    <li>
+                        <Link to='/'>Phim bộ</Link>
+                    </li>
+                    <li>
+                        <Link to='/'>Phim hot</Link>
+                    </li>
                 </ul>
             </div>
             
