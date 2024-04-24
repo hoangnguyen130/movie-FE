@@ -11,11 +11,30 @@ const cx = classNames.bind(styles)
 let slug = ''
 
 function Review({data}) {
-    const imgSrc = `${baseImageUrl}${data.poster_url}`
+    const imgSrc = `${baseImageUrl}${data.thumb_url}`
     const handlePlay = () => {
         slug = data.slug
         console.log(slug)
     }
+    // const animate_string = (text, textNode) => {
+    //     setInterval(() => {
+    //         text = text[text.length - 1] + text.substring(0, text.length - 1);
+    //         textNode.data = text;
+    //     }, 500);
+    // }
+    // const handleRunText = () => {
+    //     const elements = document.querySelector('.text-name');
+    //     elements.map((e) => {
+    //         if(e.data >= 20) {
+    //             animate_string(e.data, e)
+    //         }
+    //     })
+        // const textNode = element.firstChild;
+        // let text = textNode.data;
+        // console.log(element)
+        // animate_string(text, textNode)
+    // }
+    //onLoad={handleRunText}
     return ( 
         <div className={cx('single-movie')}>
                 <div className={cx('movie-img')}>
@@ -31,10 +50,13 @@ function Review({data}) {
                             <FontAwesomeIcon className={cx('play-icon')} icon={faPlay}/>
                         </Link>
                     </button>
-                    <Link to="/movie" className={cx('more-info')}>
+                    {/* <Link to="/movie" className={cx('more-info')}>
                         More information
-                    </Link>
-                    {/* <span className={cx('rate')}>Rate:{data.vote_average}</span> */}
+                    </Link> */}
+                    <div className={cx('name')}>
+                        <span className={cx('vn-name')}>{data.name}</span>
+                        <span className={cx('origin-name')}>{data.origin_name}</span>
+                    </div>
                 </div>
             </div>
     );

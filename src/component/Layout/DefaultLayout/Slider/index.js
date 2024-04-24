@@ -27,8 +27,9 @@ function Slider() {
     }, [])
     return <section className={cx('wrapper-content')}>
         <div className={cx('list-title')}>
-            <h2 className={cx('text-title')}>Trending</h2>
-            <p className={cx('see-all')}>See all
+            <h2 className={cx('text-title')}>Phim mới cập nhật</h2>
+            <p className={cx('see-all')}>
+                Xem tất cả
                 <FontAwesomeIcon className={cx('title-icon')} icon={faAngleRight}/>
             </p>
         </div>
