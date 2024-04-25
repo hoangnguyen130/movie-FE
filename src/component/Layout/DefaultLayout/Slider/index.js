@@ -9,25 +9,26 @@ import { useEffect, useState } from "react";
 
 const cx = classNames.bind(styles)
 
-function Slider() {
+function Slider({data}) {
     const [trendingMovie, setTrendingMovie] = useState([]);
-
+    console.log(data)
     useEffect(() => {
         axios
             .get(`https://ophim1.com/danh-sach/phim-moi-cap-nhat`,
             {
                 params: {
-                    page: 1
+                    page: data.page
                 }
             })
             .then((res) => {
                 setTrendingMovie(res.data.items);
             })
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     return <section className={cx('wrapper-content')}>
         <div className={cx('list-title')}>
-            <h2 className={cx('text-title')}>Phim mới cập nhật</h2>
+            <h2 className={cx('text-title')}>{data.title}</h2>
             <p className={cx('see-all')}>
                 Xem tất cả
                 <FontAwesomeIcon className={cx('title-icon')} icon={faAngleRight}/>
