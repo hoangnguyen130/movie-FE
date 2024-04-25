@@ -11,7 +11,6 @@ const cx = classNames.bind(styles)
 
 function Slider({data}) {
     const [trendingMovie, setTrendingMovie] = useState([]);
-    console.log(data)
     useEffect(() => {
         axios
             .get(`https://ophim1.com/danh-sach/phim-moi-cap-nhat`,

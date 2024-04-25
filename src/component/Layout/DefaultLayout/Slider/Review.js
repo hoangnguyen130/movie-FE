@@ -14,7 +14,6 @@ function Review({data}) {
     const imgSrc = `${baseImageUrl}${data.thumb_url}`
     const handlePlay = () => {
         slug = data.slug
-        console.log(slug)
     }
     // const animate_string = (text, textNode) => {
     //     setInterval(() => {
@@ -50,9 +49,6 @@ function Review({data}) {
                             <FontAwesomeIcon className={cx('play-icon')} icon={faPlay}/>
                         </Link>
                     </button>
-                    {/* <Link to="/movie" className={cx('more-info')}>
-                        More information
-                    </Link> */}
                     <div className={cx('name')}>
                         <span className={cx('vn-name')}>{data.name}</span>
                         <span className={cx('origin-name')}>{data.origin_name}</span>
