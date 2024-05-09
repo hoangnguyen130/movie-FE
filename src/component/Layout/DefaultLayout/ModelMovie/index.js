@@ -12,6 +12,7 @@ import PlayMovie from "../PlayMovie";
 import { slug } from "../Slider/Review";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { trailerSlug } from "../Trailer";
 
 const cx = classNames.bind(styles)
 
@@ -21,12 +22,21 @@ function ModelMovie() {
     const [ep, setEP] = useState(0)
     const [name, setName] = useState('')
     useEffect(() => {
-        axios
-            .get(`https://ophim1.com/phim/${slug}`)
+        if (slug === ''){
+            axios
+            .get(`https://ophim1.com/phim/${trailerSlug}`)
             .then((res) => {
                 setMovie(res.data.episodes)
                 setName(res.data.movie.name)
-            })
+            }) 
+        } else {
+            axios
+                .get(`https://ophim1.com/phim/${slug}`)
+                .then((res) => {
+                    setMovie(res.data.episodes)
+                    setName(res.data.movie.name)
+                })
+        }
     }, [])
     const handleChangeEp = (event) =>{
         setEP(event.target.innerText - 1)

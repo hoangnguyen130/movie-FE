@@ -1,5 +1,5 @@
 import Header from "~/component/Layout/DefaultLayout/Header";
-import Trailer from "~/component/Layout/DefaultLayout/Trailer";
+import { Trailer } from "~/component/Layout/DefaultLayout/Trailer";
 import Slider from "~/component/Layout/DefaultLayout/Slider";
 import Footer from "~/component/Layout/DefaultLayout/Footer";
 

@@ -30,13 +30,9 @@
 .title-icon{
     padding-left: 4px;
 }
-.list-movie{
-    display: inline-flex;
-
-}
 .single-movie{
     height: 290px;
-    width: 226px;
+    width: 230px;
     margin-right: 32px;
     border-radius: 8px;
     position: relative;
@@ -65,7 +61,7 @@
     transition: .5s;
 
     position: absolute;
-    top: 30%;
+    top: 40%;
     left: 38%;
     z-index: 1;
     text-align: center;
@@ -90,6 +86,22 @@
     left: 0;
     z-index: 1;
 }
+.origin-name, .vn-name{
+    display: inline;
+    overflow: hidden;
+}
+.origin-name span, .vn-name span{
+    display: inline-block;
+    min-width: 100%;
+    padding: 0 4px;
+    white-space: nowrap;
+    animation: marquee 10s infinite forwards;
+}
 .origin-name{
     font-size: 12px;
+    margin-top: 2px;
+}
+@keyframes marquee {
+    from {transform: translateX(0);     margin-left: 0;}
+    to   {transform: translateX(-100%); margin-left: 100%; }
 }
