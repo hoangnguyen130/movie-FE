@@ -5,12 +5,16 @@ import styles from './ModelMovie.module.scss'
 const cx = classNames.bind(styles)
 
 
-function Ep(data) {
+function Ep({data, ep}) {
     return ( 
         <ul className={cx("ep")}>
             <li>
-                {data.data.server_data.map((e, i) => (
-                    <button className={cx('ep-button')} key={i}>{i + 1}</button>
+                {data.server_data.map((e,i) => (
+                    <button className={cx('ep-button')} key={e.name}
+                        style={ep === i ? {color:'#3ea6ff'} : {}}
+                    >
+                        {i + 1}
+                    </button>
                 ))}
             </li>
         </ul>

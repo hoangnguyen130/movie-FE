@@ -57,7 +57,7 @@ function ModelMovie() {
                 <span className={cx('text-list-ep')}>Danh sách tập</span>
                 {movie.map((item, index) => (
                     <div key={index} onClick={handleChangeEp}>
-                        <Ep data={item}/>
+                        <Ep data={item} ep={ep}/>
                     </div>
                 ))}
             </div>
