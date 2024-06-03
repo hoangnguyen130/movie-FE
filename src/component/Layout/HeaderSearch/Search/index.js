@@ -26,14 +26,21 @@ function Search() {
             return;
         }
         axios
-            .get(`https://ophim1.com/phim/`,
+            // .get(`https://ophim1.com/phim/${debounced}`)
+
+
+            .get(`https://api.themoviedb.org/3/search/movie`,
             {
                 params: {
-                    '' : debounced
+                    // '' : debounced
+                    api_key: 'b4880373e5e7462cf3059ff7f7188e5d',
+                    query: debounced
                 }
             })
+
+
             .then((res) => {
-                setSearchResult(res.data.items);
+                setSearchResult(res.data.results);
             });
         // eslint-disable-next-line    
         }, [debounced])

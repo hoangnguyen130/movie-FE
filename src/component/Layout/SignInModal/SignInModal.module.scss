@@ -1,0 +1,92 @@
+video{
+    width: 100%;
+}
+.modal-wrapper{
+    position: relative;
+}
+.close-button{
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: var(--white);
+    background-color: transparent;
+    font-size: 20px;
+    padding: 2px;
+    cursor: pointer;
+    z-index: 10;
+}
+.content-wrapper{
+    position: absolute;
+    top: 100px;
+    left: 37%;
+    background-color: rgba(51, 51, 51);
+    opacity: .95;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // height: 600px;
+    width: 400px;
+    border-radius: 8px;
+    padding: 20px 0;
+}
+.header-text{
+    padding-top: 16px;
+}
+.sub-text{
+    margin-top: 12px;
+    font-size: 14px;
+    opacity: .5;
+}
+.input{
+    display: flex;
+    flex-direction: column;
+    margin-top: 28px;
+}
+.input > input{
+    // padding: 8px;
+    font-size: 16px;
+    padding: 8px 40px;
+    margin: 8px 0;
+    border: 1px solid white;
+    border-radius: 4px;
+    background-color: transparent;
+    color: var(--white);
+}
+.login-button{
+    color: var(--white);
+    background-color: transparent;
+    padding: 8px 20px;
+    margin-top: 40px;
+    border: 1px solid;
+    border-radius: 4px;
+    cursor: pointer;
+    &:hover{
+        background-color: rgba(190, 186, 186, .5);
+    }
+}
+.list{
+    display: flex;
+    margin: 12px 0;
+    align-items: center;
+    text-align: left;
+}
+.list > p{
+    padding-right: 4px;
+}
+.list > a{
+    padding: 0 8px;
+    font-size: 20px
+}
+.check-text{
+    display: flex;
+    padding-bottom: 20px;
+}
+.register-text{
+    padding-left: 4px;
+    color: var(--main-color);
+    cursor: pointer;
+    &:hover{
+        color: var(--white);
+    }
+}

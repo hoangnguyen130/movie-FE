@@ -32,7 +32,8 @@ function Trailer() {
                 {trailerMovie.name}
             </div>
             <h4 className={cx('movie-describe')}>
-                {trailerMovie.content}
+                {/* {trailerMovie.content} */}
+                Nữ hoàng cửa hàng bách hóa và hoàng tử siêu thị xoay xở với khủng hoảng hôn nhân, rồi tình yêu bắt đầu nảy nở trở lại theo cách kỳ diệu.
             </h4>
             <div className={cx('button')}>
                 <Link  to='/movie'>

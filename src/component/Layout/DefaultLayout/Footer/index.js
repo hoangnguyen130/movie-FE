@@ -38,19 +38,19 @@ function Footer() {
                 <ul>
                     <h5 className={cx('title')}>CONNECT WITH US</h5>
                     <li>
-                        <a href="https://www.facebook.com/daylahoangnguyen/">
+                        <a href="https://www.facebook.com/daylahoangnguyen/" target="_blank" rel="noreferrer">
                             <FontAwesomeIcon icon={faFacebook} className={cx('icon')}/>
                             Facebook
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.instagram.com/hoangng.135/">
+                        <a href="https://www.instagram.com/hoangng.135/" target="_blank" rel="noreferrer">
                             <FontAwesomeIcon icon={faInstagram} className={cx('icon')}/>
                             Instagram
                         </a>
                     </li>
                     <li>
-                        <a href="https://twitter.com/HoangNguyen151">
+                        <a href="https://twitter.com/HoangNguyen151" target="_blank" rel="noreferrer">
                             <FontAwesomeIcon icon={faTwitter} className={cx('icon')}/>
                             Twitter
                         </a>

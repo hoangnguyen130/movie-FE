@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 const cx = classNames.bind(styles)
-const currentUser = true 
+const currentUser = false 
 
 
 function Header() {
@@ -63,7 +63,7 @@ function Header() {
             ) : (
 
             <div className={cx('login')}>
-                <button className={cx('login-btn')}>Sign in</button>
+                <Link to='/sign-in'><button className={cx('login-btn')}>Sign in</button></Link>
             </div>
             )}
         </div>

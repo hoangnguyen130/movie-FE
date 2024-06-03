@@ -6,7 +6,7 @@ const cx = classNames.bind(styles);
 function SeachRecommend({data}) {
     return ( 
         <p className={cx('movie-name')}>
-            {data.name}
+            {data.title}
         </p>
      );
 };
