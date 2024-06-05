@@ -21,7 +21,7 @@ function Home() {
             page: 2
         },
         {
-            title: 'Phim hot 2',
+            title: 'Phim chiếu rạp',
             page: 3
         }
     ]
