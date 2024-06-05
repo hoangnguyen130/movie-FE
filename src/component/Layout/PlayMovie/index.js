@@ -1,6 +1,6 @@
 import Video from "./Video";
 import classNames from "classnames/bind";
-import styles from './PlayMovie.module.scss';
+import styles from './PlayMovie.module.scss'
 
 const cx = classNames.bind(styles);
 

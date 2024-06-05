@@ -1,0 +1,20 @@
+.wrapper{
+    padding: 120px 60px;
+    color: var(--white);
+    background-color: var(--background-color);
+}
+.page-title{
+    margin-bottom: 20px;
+}
+.content{
+    content: "";
+    display: table;
+    clear: both;
+}
+.single-content{
+    display: flex;
+    justify-content: center;
+    float: left;
+    width: 25%;
+    padding: 24px 0;
+}

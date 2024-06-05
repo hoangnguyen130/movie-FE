@@ -29,25 +29,25 @@ function Header() {
                 [styles.background]: showbg
             })}>
         <div className={cx('content')}>
-            <div className={cx('logo')}>
-            <img
-            src={logo}
-            alt="logo movie"/>
-            </div>
+            {/* <Link to={'/'}> */}
+                <div className={cx('logo')}>
+                    <img src={logo} alt="logo movie"/>
+                </div>
+            {/* </Link> */}
             <div className={cx('header-list')} >
                 <ul>
-                    <li className={cx('active')}>
-                        <Link to='/'>Trang chủ</Link>
-                    </li>
-                    <li>
-                        <Link to='/'>Phim lẻ</Link>
-                    </li>
-                    <li>
-                        <Link to='/'>Phim bộ</Link>
-                    </li>
-                    <li>
-                        <Link to='/'>Phim hot</Link>
-                    </li>
+                    <Link to={'/'}>
+                        <li className={cx('active')}>Trang chủ</li>
+                    </Link>
+                    <Link to={'/phim-moi-cap-nhat'}>
+                        <li>Phim mới cập nhật</li>
+                    </Link>
+                    <Link to='/phim-hot'>
+                        <li>Phim hot</li>
+                    </Link>
+                    <Link to='/phim-chieu-rap'>
+                        <li>Phim chiếu rạp</li>
+                    </Link>
                 </ul>
             </div>
             

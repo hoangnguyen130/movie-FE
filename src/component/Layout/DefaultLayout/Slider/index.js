@@ -10,6 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { Review } from './Review'
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles)
 
@@ -68,10 +69,12 @@ function MovieSlider({data}) {
     return <section className={cx('wrapper-content')}>
         <div className={cx('list-title')}>
             <h2 className={cx('text-title')}>{data.title}</h2>
-            <p className={cx('see-all')}>
-                Xem tất cả
-                <FontAwesomeIcon className={cx('title-icon')} icon={faAngleRight}/>
-            </p>
+            <Link to={`/${data.slug}`}>
+                <p className={cx('see-all')}>
+                    Xem tất cả
+                    <FontAwesomeIcon className={cx('title-icon')} icon={faAngleRight}/>
+                </p>
+            </Link>
         </div>
             <div className={cx('list-movie')}>
                 <Slider {...settings}> 

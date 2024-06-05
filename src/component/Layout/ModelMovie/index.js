@@ -6,13 +6,13 @@ import Ep from "./MovieEp";
 
 import classNames from "classnames/bind";
 import styles from './ModelMovie.module.scss'
-import Footer from "../Footer";
-import Header from "../Header";
+import Footer from "../DefaultLayout/Footer";
+import Header from "../DefaultLayout/Header";
 import PlayMovie from "../PlayMovie";
-import { slug } from "../Slider/Review";
+import { slug } from "../DefaultLayout/Slider/Review";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import { trailerSlug } from "../Trailer";
+import { trailerSlug } from "../DefaultLayout/Trailer";
 
 const cx = classNames.bind(styles)
 

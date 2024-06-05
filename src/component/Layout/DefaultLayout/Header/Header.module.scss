@@ -22,11 +22,11 @@
     justify-content: space-between;
     padding: 0 60px;    
 }
-.logo{
+.content .logo{
     height: 100%;
     padding-right: 40px;
 }
-.logo > img{
+.content .logo > img{
     height: 100%;
 }
 .header-list{
@@ -40,7 +40,7 @@
     align-items: center;
     text-shadow: var(--black) 0.1em 0.1em 0.2em;
 }
-.header-list > ul > li::after {
+.header-list ul li::after {
     content: "";
     width: 0;
     height: 3px;
@@ -48,7 +48,7 @@
     display: block;
     transition: .5s;
 }
-.header-list > ul > li:hover::after{
+.header-list ul li:hover::after{
     width: 100%;
     padding: 0 1px;
 }
@@ -56,7 +56,7 @@
     width: 100%;
     padding: 0 1px;
 }
-.header-list > ul > li{
+.header-list ul li{
     padding: 12px;
     cursor: pointer;
     border-bottom: 2px solid transparent;

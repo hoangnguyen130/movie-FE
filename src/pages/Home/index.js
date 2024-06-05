@@ -14,15 +14,18 @@ function Home() {
     const datas = [
         {
             title: 'Phim mới cập nhật',
-            page: 1
+            page: 1,
+            slug: 'phim-moi-cap-nhat'
         },
         {
             title: 'Phim hot',
-            page: 2
+            page: 2,
+            slug: 'phim-hot'
         },
         {
             title: 'Phim chiếu rạp',
-            page: 3
+            page: 3,
+            slug: 'phim-chieu-rap'
         }
     ]
     return (

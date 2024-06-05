@@ -7,6 +7,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import img from '~/assets/img/queen-of-tears.jpg'
+import { slug } from "../Slider/Review";
 
 const cx = classNames.bind(styles);
 const trailerSlug = 'nu-hoang-nuoc-mat'
