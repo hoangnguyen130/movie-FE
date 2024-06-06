@@ -1,43 +1,42 @@
 /* eslint-disable no-unused-vars */
 import classNames from "classnames/bind";
-import styles from './Trailer.module.scss';
+import styles from './FeaturedMovie.module.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import img from '~/assets/img/queen-of-tears.jpg'
-import { slug } from "../Slider/Review";
 
 const cx = classNames.bind(styles);
-const trailerSlug = 'nu-hoang-nuoc-mat'
+const featuredSlug = 'nu-hoang-nuoc-mat'
 
-function Trailer() {
-    const [trailerMovie, setTrailerMovie] = useState([]);
+function FeaturedMovie() {
+    const [featuredMovie, setfeaturedMovie] = useState([]);
 
     useEffect(() => {
         axios
-            .get(`https://ophim1.com/phim/${trailerSlug}`)
+            .get(`https://ophim1.com/phim/${featuredSlug}`)
             .then((res) => {
-                setTrailerMovie(res.data.movie)
+                setfeaturedMovie(res.data.movie)
             })
     }, [])
     return <section className={cx('trailer-wrapper')}>
         <img
             className={cx('background-img')}
             src= {img}
-            alt= {trailerMovie.name}
+            alt= {featuredMovie.name}
         />
         <div className={cx('movie-info')}>
             <div className={cx('movie-title')}>
-                {trailerMovie.name}
+                {featuredMovie.name}
             </div>
             <h4 className={cx('movie-describe')}>
                 {/* {trailerMovie.content} */}
                 Nữ hoàng cửa hàng bách hóa và hoàng tử siêu thị xoay xở với khủng hoảng hôn nhân, rồi tình yêu bắt đầu nảy nở trở lại theo cách kỳ diệu.
             </h4>
             <div className={cx('button')}>
-                <Link  to='/movie'>
+                <Link  to='/featured-movie'>
                     <button className={cx('play')}>
                         <FontAwesomeIcon className={cx('play-icon')} icon={faPlay}/>
                         <span className={cx('play-text')}>Play</span>
@@ -48,4 +47,4 @@ function Trailer() {
     </section>
 }
 
-export {Trailer, trailerSlug};
+export {FeaturedMovie, featuredSlug};

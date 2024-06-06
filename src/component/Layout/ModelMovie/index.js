@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-// import Trailer from "../Trailer";
 import Ep from "./MovieEp";
 
 import classNames from "classnames/bind";
@@ -9,35 +8,33 @@ import styles from './ModelMovie.module.scss'
 import Footer from "../DefaultLayout/Footer";
 import Header from "../DefaultLayout/Header";
 import PlayMovie from "../PlayMovie";
-import { slug } from "../DefaultLayout/Slider/Review";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import { trailerSlug } from "../DefaultLayout/Trailer";
 
 const cx = classNames.bind(styles)
 
 
-function ModelMovie() {
+function ModelMovie({slug}) {
     const [movie, setMovie] = useState([]);
     const [ep, setEP] = useState(0)
     const [name, setName] = useState('')
     useEffect(() => {
-        if (slug === ''){
-            axios
-            .get(`https://ophim1.com/phim/${trailerSlug}`)
-            .then((res) => {
-                setMovie(res.data.episodes)
-                setName(res.data.movie.name)
-            }) 
-        } else {
+        // if (slug === ''){
+        //     axios
+        //     .get(`https://ophim1.com/phim/${featuredSlug}`)
+        //     .then((res) => {
+        //         setMovie(res.data.episodes)
+        //         setName(res.data.movie.name)
+        //     }) 
+        // } else {
             axios
                 .get(`https://ophim1.com/phim/${slug}`)
                 .then((res) => {
                     setMovie(res.data.episodes)
                     setName(res.data.movie.name)
                 })
-        }
-    }, [])
+        // }
+    }, [slug])
     const handleChangeEp = (event) =>{
         setEP(event.target.innerText - 1)
     }

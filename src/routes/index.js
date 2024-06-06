@@ -4,6 +4,7 @@ import Movie from "~/pages/Movie"
 import SignIn from "~/pages/SignIn"
 import FilmHot from "~/pages/FilmHot"
 import TheatricalFilm from "~/pages/TheatricalFilm"
+import PlayFeatured from "~/pages/PlayFeatured"
 
 const publicRoutes = [
     { path: '/', component: Home },
@@ -11,7 +12,8 @@ const publicRoutes = [
     { path: '/sign-in', component: SignIn},
     { path: '/phim-moi-cap-nhat', component: NewUpdate},
     { path: '/phim-hot', component: FilmHot},
-    { path: '/phim-chieu-rap', component: TheatricalFilm}
+    { path: '/phim-chieu-rap', component: TheatricalFilm},
+    { path: '/featured-movie', component: PlayFeatured}
 ]
 
 
