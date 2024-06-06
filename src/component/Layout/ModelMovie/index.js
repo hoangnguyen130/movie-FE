@@ -19,21 +19,12 @@ function ModelMovie({slug}) {
     const [ep, setEP] = useState(0)
     const [name, setName] = useState('')
     useEffect(() => {
-        // if (slug === ''){
-        //     axios
-        //     .get(`https://ophim1.com/phim/${featuredSlug}`)
-        //     .then((res) => {
-        //         setMovie(res.data.episodes)
-        //         setName(res.data.movie.name)
-        //     }) 
-        // } else {
-            axios
-                .get(`https://ophim1.com/phim/${slug}`)
-                .then((res) => {
-                    setMovie(res.data.episodes)
-                    setName(res.data.movie.name)
-                })
-        // }
+        axios
+            .get(`https://ophim1.com/phim/${slug}`)
+            .then((res) => {
+                setMovie(res.data.episodes)
+                setName(res.data.movie.name)
+            })
     }, [slug])
     const handleChangeEp = (event) =>{
         setEP(event.target.innerText - 1)

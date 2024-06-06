@@ -68,8 +68,8 @@ function MovieSlider({data}) {
     }, [])
     return <section className={cx('wrapper-content')}>
         <div className={cx('list-title')}>
-            <h2 className={cx('text-title')}>{data.title}</h2>
-            <Link to={`/${data.slug}`}>
+            <h2 className={cx('text-title')}>{data.pageTitle}</h2>
+            <Link to={`/${data.pageSlug}`}>
                 <p className={cx('see-all')}>
                     Xem tất cả
                     <FontAwesomeIcon className={cx('title-icon')} icon={faAngleRight}/>

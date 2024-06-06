@@ -3,9 +3,9 @@ import Header from "~/component/Layout/DefaultLayout/Header";
 
 function TheatricalFilm() {
     const data = {
-        title: 'Phim mới cập nhật',
+        pageTitle: 'Phim chiếu rạp',
         page: 3,
-        slug: 'phim-moi-cap-nhat'
+        pageSlug: 'phim-chieu-rap'
     }
     return <div >
             <Header/>

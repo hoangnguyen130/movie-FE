@@ -3,9 +3,9 @@ import Header from "~/component/Layout/DefaultLayout/Header";
 
 function NewUpdate() {
     const data = {
-        title: 'Phim mới cập nhật',
+        pageTitle: 'Phim mới cập nhật',
         page: 1,
-        slug: 'phim-moi-cap-nhat'
+        pageSlug: 'phim-moi-cap-nhat'
     }
     return <div >
             <Header/>

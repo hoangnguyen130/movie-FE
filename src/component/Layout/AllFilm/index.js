@@ -30,10 +30,12 @@ function ContentLayout({data}) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     return ( <div className={cx('wrapper')}>
-        <h2 className={cx('page-title')}>Phim mới cập nhật</h2>
+        <h2 className={cx('page-title')}>{data.pageTitle}</h2>
         <div className={cx('content')}>
             {listMovie.map((item) => (
-                <div className={cx('single-content')}><Review data={item} baseUrl={baseUrl}/></div>
+                <div className={cx('single-content')}>
+                    <Review data={item} baseUrl={baseUrl}/>
+                </div>
             ))}
         </div>
         <Footer/>

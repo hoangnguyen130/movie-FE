@@ -3,9 +3,9 @@ import Header from "~/component/Layout/DefaultLayout/Header";
 
 function FilmHot() {
     const data = {
-        title: 'Phim mới cập nhật',
+        pageTitle: 'Phim hot',
         page: 2,
-        slug: 'phim-moi-cap-nhat'
+        pageSlug: 'phim-hot'
     }
     return <div >
             <Header/>

@@ -13,19 +13,19 @@ const cx = classNames.bind(styles);
 function Home() {
     const datas = [
         {
-            title: 'Phim mới cập nhật',
+            pageTitle: 'Phim mới cập nhật',
             page: 1,
-            slug: 'phim-moi-cap-nhat'
+            pageSlug: 'phim-moi-cap-nhat'
         },
         {
-            title: 'Phim hot',
+            pageTitle: 'Phim hot',
             page: 2,
-            slug: 'phim-hot'
+            pageSlug: 'phim-hot'
         },
         {
-            title: 'Phim chiếu rạp',
+            pageTitle: 'Phim chiếu rạp',
             page: 3,
-            slug: 'phim-chieu-rap'
+            pageSlug: 'phim-chieu-rap'
         }
     ]
     return (

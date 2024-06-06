@@ -37,7 +37,7 @@ function Header() {
             <div className={cx('header-list')} >
                 <ul>
                     <Link to={'/'}>
-                        <li className={cx('active')}>Trang chủ</li>
+                        <li>Trang chủ</li>
                     </Link>
                     <Link to={'/phim-moi-cap-nhat'}>
                         <li>Phim mới cập nhật</li>
