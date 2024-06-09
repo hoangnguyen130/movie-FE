@@ -1,15 +1,41 @@
-.full-screen{
-    font-size: 20px;
-    background-color: transparent;
-    color: var(--white);
-    position: absolute;
-    bottom: 10px;
-    right: 20px;
-    cursor: pointer;
-}
+// .full-screen{
+//     font-size: 20px;
+//     background-color: transparent;
+//     color: var(--white);
+//     position: absolute;
+//     bottom: 10px;
+//     right: 20px;
+//     cursor: pointer;
+// }
 .video{
-    // padding: 24px;
     height: 600px;
     width: 1050px;
     position: relative;
 }
+
+@media (max-width: 1024px) { 
+    .video{
+        height: 500px;
+        width: 900px
+    }
+ }
+
+ @media (max-width: 768px) { 
+    .video{
+        height: 350px;
+        width: 600px
+    }
+ }
+
+ @media (max-width: 576px) { 
+    .video{
+        height: 250px;
+        width: 500px
+    }
+  }
+  @media (max-width: 480px) { 
+    .video{
+        height: 175px;
+        width: 350px
+    }
+  }

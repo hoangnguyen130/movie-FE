@@ -32,9 +32,9 @@ function ContentLayout({data}) {
     return ( <div className={cx('wrapper')}>
         <h2 className={cx('page-title')}>{data.pageTitle}</h2>
         <div className={cx('content')}>
-            {listMovie.map((item) => (
-                <div className={cx('single-content')}>
-                    <Review data={item} baseUrl={baseUrl}/>
+            {listMovie.map((item, i) => (
+                <div key={i} className={cx('single-content')}>
+                    <Review key={i} data={item} baseUrl={baseUrl}/>
                 </div>
             ))}
         </div>

@@ -24,7 +24,7 @@ function MovieSlider({data}) {
         initialSlide: 0,
         responsive: [
         {
-            breakpoint: 1024,
+            breakpoint: 1025,
             settings: {
             slidesToShow: 3,
             slidesToScroll: 1,
@@ -33,15 +33,29 @@ function MovieSlider({data}) {
             }
         },
         {
-            breakpoint: 600,
+            breakpoint: 769,
             settings: {
-            slidesToShow: 2,
+            slidesToShow: 2.5,
             slidesToScroll: 1,
             initialSlide: 2
             }
         },
         {
-            breakpoint: 480,
+            breakpoint: 577,
+            settings: {
+            slidesToShow: 1.5,
+            slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 481,
+            settings: {
+            slidesToShow: 1.1,
+            slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 420,
             settings: {
             slidesToShow: 1,
             slidesToScroll: 1

@@ -44,3 +44,21 @@
     padding-right: 4px;
     border-right: solid 1px #54b9c5;
 }
+
+
+@media (max-width: 1024px) { 
+   .footer-wrapper{
+        padding: 80px 60px;
+   }
+}
+@media (max-width: 480px) { 
+    .footer-wrapper{
+        padding: 140px 20px;
+    }
+    .title{
+        font-size: 12px;
+    }
+    .footer-content > ul > li{
+        font-size: 8px;
+    }
+ }

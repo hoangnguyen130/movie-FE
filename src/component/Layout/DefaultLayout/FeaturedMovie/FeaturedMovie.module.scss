@@ -1,9 +1,10 @@
 .trailer-wrapper{
     background-color: var(--background-color);
+    position: relative;
+
 }
 .background-img{
     width: 100%;
-    position: relative;
 }
 .movie-info{
     position: absolute;
@@ -53,4 +54,40 @@
 .play-icon{
     font-size: 20px;
     padding-right: 8px;
+}
+
+
+@media (max-width: 1024px) { 
+    .movie-info{
+        height: 200px;
+        width: 400px;
+        bottom: 60px;
+    }
+    .movie-describe{
+        padding: 0;
+    }
+}
+
+@media (max-width: 576px) { 
+    .movie-info{
+        height: 50px;
+        width: 300px;
+        bottom: 80px;
+    }
+    .movie-title{
+        font-size: 20px;
+    }
+    .movie-describe{
+        font-size: 12px;
+    }
+    .play{
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+    .play-icon{
+        font-size: 12px;
+    }
+    .button{
+        padding: 0;
+    }
 }

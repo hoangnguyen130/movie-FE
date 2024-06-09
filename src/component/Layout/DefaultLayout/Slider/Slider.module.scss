@@ -105,3 +105,11 @@
     from {transform: translateX(0);     margin-left: 0;}
     to   {transform: translateX(-100%); margin-left: 100%; }
 }
+
+@media (max-width: 1024px) { 
+    .see-all{
+        opacity: 1;
+        transform: translateX(0);
+
+    }
+ }

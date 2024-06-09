@@ -29,24 +29,24 @@ function Header() {
                 [styles.background]: showbg
             })}>
         <div className={cx('content')}>
-            {/* <Link to={'/'}> */}
                 <div className={cx('logo')}>
-                    <img src={logo} alt="logo movie"/>
+                    <Link to={'/'}>
+                        <img src={logo} alt="logo movie"/>
+                    </Link>
                 </div>
-            {/* </Link> */}
             <div className={cx('header-list')} >
                 <ul>
                     <Link to={'/'}>
-                        <li>Trang chủ</li>
+                        <li className={cx('header-home')}>Trang chủ</li>
                     </Link>
                     <Link to={'/phim-moi-cap-nhat'}>
-                        <li>Phim mới cập nhật</li>
+                        <li className={cx('header-new')}>Phim mới cập nhật</li>
                     </Link>
                     <Link to='/phim-hot'>
-                        <li>Phim hot</li>
+                        <li className={cx('header-hot')}>Phim hot</li>
                     </Link>
                     <Link to='/phim-chieu-rap'>
-                        <li>Phim chiếu rạp</li>
+                        <li className={cx('header-featured')}>Phim chiếu rạp</li>
                     </Link>
                 </ul>
             </div>

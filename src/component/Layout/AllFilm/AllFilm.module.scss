@@ -18,3 +18,23 @@
     width: 25%;
     padding: 24px 0;
 }
+
+
+
+@media (max-width: 768px) { 
+    .single-content{
+        width: 33.3333%;
+    }
+ }
+
+ @media (max-width: 600px) { 
+    .single-content{
+        width: 50%;
+    }
+ }
+
+ @media (max-width: 480px) { 
+    .single-content{
+        width: 100%;
+    }
+ }
