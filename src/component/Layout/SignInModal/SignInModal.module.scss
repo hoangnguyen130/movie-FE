@@ -25,7 +25,6 @@ video{
     display: flex;
     flex-direction: column;
     align-items: center;
-    // height: 600px;
     width: 400px;
     border-radius: 8px;
     padding: 20px 0;
@@ -41,10 +40,9 @@ video{
 .input{
     display: flex;
     flex-direction: column;
-    margin-top: 28px;
+    margin: 28px 0;
 }
 .input > input{
-    // padding: 8px;
     font-size: 16px;
     padding: 8px 40px;
     margin: 8px 0;
@@ -54,10 +52,11 @@ video{
     color: var(--white);
 }
 .login-button{
+    display: block;
     color: var(--white);
     background-color: transparent;
     padding: 8px 20px;
-    margin-top: 40px;
+    margin: 0 auto;
     border: 1px solid;
     border-radius: 4px;
     cursor: pointer;

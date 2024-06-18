@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 const cx = classNames.bind(styles)
-const currentUser = false 
 
 
 function Header() {
@@ -40,20 +39,20 @@ function Header() {
                         <li className={cx('header-home')}>Trang chủ</li>
                     </Link>
                     <Link to={'/phim-moi-cap-nhat'}>
-                        <li className={cx('header-new')}>Phim mới cập nhật</li>
+                        <li className={cx('header-new')}>Phim lẻ</li>
                     </Link>
                     <Link to='/phim-hot'>
-                        <li className={cx('header-hot')}>Phim hot</li>
+                        <li className={cx('header-hot')}>Phim bộ</li>
                     </Link>
                     <Link to='/phim-chieu-rap'>
-                        <li className={cx('header-featured')}>Phim chiếu rạp</li>
+                        <li className={cx('header-featured')}>Phim hot</li>
                     </Link>
                 </ul>
             </div>
             
             <Search/>
             
-            {currentUser ? (
+            {localStorage.getItem('token') ? (
                 <Menu>
                     <img 
                     className={cx('user-avt')}

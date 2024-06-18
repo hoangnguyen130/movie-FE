@@ -14,7 +14,7 @@ function Review({data , baseUrl}) {
     const handlePlay = () => {
         slug = data.slug
     }
-    
+    console.log(data)
     return ( 
         <div className={cx('single-movie')}>
                 <div className={cx('movie-img')}>

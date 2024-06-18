@@ -59,7 +59,7 @@ function Search() {
                 render = {attrs => (
                     <div className={cx('recommend-box')} tabIndex='-1' {...attrs}>
                         {searchResult.map((item) => (
-                            <PopperWrapper>
+                            <PopperWrapper key={item._id}>
                                 <MovieName key={item._id} data={item}/>  
                             </PopperWrapper>                     
                         ))}

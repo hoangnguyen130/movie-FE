@@ -4,12 +4,18 @@ import { Wrapper as PopperWrapper } from "~/component/Layout/Popper";
 import styles from "./Menu.module.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleQuestion, faSignOut, faUser } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
 
 function Menu( {children}) {
+    const navigate = useNavigate()
 
+    const handleSignOut = () => {
+        localStorage.removeItem('token')
+        navigate('/sign-in')
+    }
     return ( 
         <Tippy
             placement='bottom-end'
@@ -32,7 +38,7 @@ function Menu( {children}) {
                     <button className={cx('menu-items')}>
                         <PopperWrapper>
                             <FontAwesomeIcon icon={faSignOut}/>
-                            <p className={cx('text')}>Sign out</p>
+                            <p className={cx('text')} onClick={handleSignOut}>Sign out</p>
                         </PopperWrapper>   
                     </button>  
                 </div>

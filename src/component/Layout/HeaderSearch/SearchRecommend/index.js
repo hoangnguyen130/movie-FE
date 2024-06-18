@@ -1,1 +1,1 @@
-export { default as SearchRecommend } from './SearchRecommend'
+export { SeachRecommend as SearchRecommend } from './SearchRecommend'

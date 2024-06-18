@@ -18,12 +18,12 @@ function Home() {
             pageSlug: 'phim-moi-cap-nhat'
         },
         {
-            pageTitle: 'Phim hot',
+            pageTitle: 'Phim đề cử',
             page: 2,
             pageSlug: 'phim-hot'
         },
         {
-            pageTitle: 'Phim chiếu rạp',
+            pageTitle: 'Series',
             page: 3,
             pageSlug: 'phim-chieu-rap'
         }

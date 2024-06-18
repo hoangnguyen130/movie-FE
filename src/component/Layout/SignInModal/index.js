@@ -1,23 +1,77 @@
 import classNames from "classnames/bind";
 import styles from './SignInModal.module.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
+// import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import video from '~/assets/video/arcanine-and-oddish.3840x2160.mp4'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+import { GoogleLogin } from '@react-oauth/google';
+import { jwtDecode } from "jwt-decode";
+// import axios from "axios";
 
 const cx = classNames.bind(styles)
 
 // let registerForm = false
 
 function SignInModal() {
+
+    const navigate = useNavigate();
+
+    const initValue = {
+        name: '',
+        email: '',
+        password: '',
+        confirmPassword: ''
+    }
+    const initLoginValue = {
+        email: '',
+        password: ''
+    }
     const [registerForm, setRegisterForm] = useState(false)
+
+    const [formValue, setFormValue] = useState(initValue)
+    const [formLoginValue, setFormLoginValue] = useState(initLoginValue)
+
+    // const [user, setUser] = useState({})
+
+    // console.log(user)
+    // useEffect(() => {
+    //     axios
+    //         .post(`http://localhost:3001/v1/auth/register`, formValue)
+    //         .then((res) => {
+    //             setUser(res)
+    //         })
+    // }, [formValue])
+
     const handleRegister = () => {
         setRegisterForm(true)
     }
     const handleShowSignUp = () => {
         setRegisterForm(false)
+    }
+    const handleChangeRegister = (event) => {
+        const { value , name} = event.target
+        setFormValue({
+            ...formValue,
+            [name]: value
+        })
+    }
+    const handleChangeLogin = (event) => {
+        const { value , name} = event.target
+        setFormLoginValue({
+            ...formLoginValue,
+            [name]: value
+        })
+    }
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        console.log(formValue)
+    }
+    const handleSubmitLogin = (event) => {
+        event.preventDefault()
+        console.log(formLoginValue)
     }
     if (registerForm) {
         return  <section className={cx('modal-wrapper')}>
@@ -30,22 +84,57 @@ function SignInModal() {
         <div className={cx('content-wrapper')}>
             <h2 className={cx('header-text')}>Đăng Kí</h2>
             <p className={cx('sub-text')}>Nhập thông tin của bạn!</p>
-            <div className={cx('input')}>
-                <input className={cx('email')} placeholder='Tên người dùng' type="text"/>
-                <input className={cx('email')} placeholder='Email' type="email"/>
-                <input className={cx('password')} placeholder='Mật khẩu' type="password"/>
-                <input className={cx('password')} placeholder='Nhập lại mật khẩu' type="password"/>
-            </div>
-            {/* <a href="#!" className={cx('sub-text')}>Quên mật khẩu?</a> */}
-            <button className={cx('login-button')}>Đăng kí</button>
+            <form onSubmit={handleSubmit}>
+                <div className={cx('input')}>
+                    <input 
+                        className={cx('email')} 
+                        placeholder='Tên người dùng' 
+                        name="name"
+                        type="text" 
+                        value={formValue.name}
+                        onChange={handleChangeRegister}
+                    />
+                    <input
+                        className={cx('email')} 
+                        placeholder='Email'
+                        name="email"
+                        type="email" 
+                        value={formValue.email}
+                        onChange={handleChangeRegister}
+                    />
+                    <input 
+                        className={cx('password')} 
+                        placeholder='Mật khẩu'
+                        name="password"
+                        type="password" 
+                        value={formValue.password}
+                        onChange={handleChangeRegister}
+                    />
+                    <input 
+                        className={cx('password')} 
+                        placeholder='Nhập lại mật khẩu'
+                        name="confirmPassword"
+                        type="password" 
+                        value={formValue.confirmPassword}
+                        onChange={handleChangeRegister}
+                    />
+                </div>
+                <button className={cx('login-button')} type="submit">Đăng kí</button>
+            </form>
             <div className={cx('list')}>
-                <p>Đăng kí với:</p>
-                <a href="#!">
-                    <FontAwesomeIcon icon={faFacebook}/>
-                </a>
-                <a href="#!">
-                    <FontAwesomeIcon icon={faGoogle}/>
-                </a>
+                <span>
+                    <GoogleLogin
+                        onSuccess={credentialResponse => {
+                            const decoded = jwtDecode(credentialResponse?.credential);
+                            console.log(decoded);
+                            localStorage.setItem('token', decoded.jti)
+                            navigate('/')
+                        }}
+                        onError={() => {
+                            console.log('Login Failed');
+                        }}
+                        />
+                </span>
             </div>
             <div className={cx('check-text')}>
                 Đã có tài khoản?
@@ -64,19 +153,45 @@ function SignInModal() {
             <div className={cx('content-wrapper')}>
                 <h2 className={cx('header-text')}>Đăng nhập</h2>
                 <p className={cx('sub-text')}>Nhập tài khoản và mật khẩu của bạn!</p>
-                <div className={cx('input')}>
-                    <input className={cx('email')} placeholder='Email' type="email"/>
-                    <input className={cx('password')} placeholder='Mật khẩu' type="password"/>
-                </div>
+                <form onSubmit={handleSubmitLogin}>
+                    <div className={cx('input')}>
+                        <input 
+                            className={cx('email')} 
+                            placeholder='Email'
+                            name="email"
+                            type="email" 
+                            value={formLoginValue.email}
+                            onChange={handleChangeLogin}
+                        />
+                        <input 
+                            className={cx('password')} 
+                            placeholder='Mật khẩu'
+                            name="password"
+                            type="password" 
+                            value={formLoginValue.password}
+                            onChange={handleChangeLogin}
+                        />
+                    </div>
+                    <button className={cx('login-button')} type="submit">Đăng nhập</button>
+                </form>
                 <a href="#!" className={cx('sub-text')}>Quên mật khẩu?</a>
-                <button className={cx('login-button')}>Đăng nhập</button>
                 <div className={cx('list')}>
-                    <a href="#!">
+                    {/* <a href="#!">
                         <FontAwesomeIcon icon={faFacebook}/>
-                    </a>
-                    <a href="#!">
-                        <FontAwesomeIcon icon={faGoogle}/>
-                    </a>
+                    </a> */}
+                    <span>
+                    <GoogleLogin
+                        onSuccess={credentialResponse => {
+                            const decoded = jwtDecode(credentialResponse?.credential);
+                            console.log(decoded);
+                            localStorage.setItem('token', decoded.jti)
+                            navigate('/')
+                        }}
+                        onError={() => {
+                            console.log('Login Failed');
+                        }}
+                        />
+                </span>
                 </div>
                 <div className={cx('check-text')}>
                     Chưa có tài khoản?
